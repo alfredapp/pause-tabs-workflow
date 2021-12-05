@@ -346,7 +346,7 @@ Application('System Events')
 				<integer>0</integer>
 				<key>script</key>
 				<string># THESE VARIABLES MUST BE SET. SEE THE ONEUPDATER README FOR AN EXPLANATION OF EACH.
-readonly remote_info_plist="https://raw.githubusercontent.com/alfredapp/pause-tabs-workflow/master/source/info.plist"
+readonly remote_info_plist="https://raw.githubusercontent.com/alfredapp/pause-tabs-workflow/master/Workflow/info.plist"
 readonly workflow_url="alfredapp/pause-tabs-workflow"
 readonly download_type='github_release'
 readonly frequency_check='4'
@@ -789,7 +789,9 @@ target_browsers.forEach(browser_name =&gt; {
 	<key>readme</key>
 	<string>Run `pauseall` to pause audio and video in tabs of all open web browers. `pauseothers` does the same except for the current tab. ⌘↵ makes it pause only tabs from the current browser.
 
-![](https://i.imgur.com/XRtGUDz.png)</string>
+![](https://i.imgur.com/akI9PmL.png)
+
+You need to turn on `Allow JavaScript from Apple Events` in the browsers you want to control for the Workflow to work.</string>
 	<key>uidata</key>
 	<dict>
 		<key>00AE9D16-4A4A-4371-9B6C-4A57F90B0FD8</key>
