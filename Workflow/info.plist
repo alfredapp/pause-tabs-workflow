@@ -444,9 +444,22 @@ const skip_active = $.getenv('skip_active')
 const frontmost_name = $.getenv('frontmost_name')
 const running_browsers = $.getenv('running_browsers')
 
-// Set up
-const pause_player = 'document.querySelectorAll("video, audio").forEach(e =&gt; e.pause())'
+// Helpers
+const pause_player = `
+	document.querySelectorAll("video, audio").forEach(e =&gt; e.pause())
 
+	// Pause embedded YouTube players
+	document.querySelectorAll("iframe").forEach(e =&gt; {
+		if (e.getAttribute("src").indexOf("youtube.com/embed") === -1) return
+
+		e.contentWindow.postMessage(JSON.stringify({
+			"event": "command",
+			"func": "pauseVideo"
+		}), "*")
+	})
+`
+
+// Set up
 const webkit_variants = ['Safari', 'Webkit']
 const chromium_variants = ['Google Chrome', 'Chromium', 'Opera', 'Vivaldi', 'Brave Browser', 'Microsoft Edge']
 
@@ -962,7 +975,7 @@ Do not skip active tab</string>
 	<key>variablesdontexport</key>
 	<array/>
 	<key>version</key>
-	<string>2021.1</string>
+	<string>2021.2</string>
 	<key>webaddress</key>
 	<string>https://github.com/alfredapp/pause-tabs-workflow/</string>
 </dict>
