@@ -72,7 +72,7 @@
 		<array>
 			<dict>
 				<key>destinationuid</key>
-				<string>B28DB2A1-54CD-4098-A01F-433BB205D0AF</string>
+				<string>2E537D85-C9B0-43CB-8485-B136A1ABB446</string>
 				<key>modifiers</key>
 				<integer>0</integer>
 				<key>modifiersubtext</key>
@@ -94,23 +94,11 @@
 				<false/>
 			</dict>
 		</array>
-		<key>273944B0-0441-45C6-9F39-42CE28E0F8C3</key>
+		<key>2E537D85-C9B0-43CB-8485-B136A1ABB446</key>
 		<array>
 			<dict>
 				<key>destinationuid</key>
-				<string>0AE02C84-6E1A-4B21-98FE-A66697BC3723</string>
-				<key>modifiers</key>
-				<integer>0</integer>
-				<key>modifiersubtext</key>
-				<string></string>
-				<key>sourceoutputuid</key>
-				<string>162C4049-4FA3-49CB-8E7E-9DC1B57AF737</string>
-				<key>vitoclose</key>
-				<false/>
-			</dict>
-			<dict>
-				<key>destinationuid</key>
-				<string>EB214D21-0962-40C8-A92D-64288B4B75E1</string>
+				<string>0C0D75D3-4308-412A-88EB-70A25A0CAC0B</string>
 				<key>modifiers</key>
 				<integer>0</integer>
 				<key>modifiersubtext</key>
@@ -123,7 +111,7 @@
 		<array>
 			<dict>
 				<key>destinationuid</key>
-				<string>62A60D92-1699-41BE-A380-BDD8D5AE6061</string>
+				<string>0AE02C84-6E1A-4B21-98FE-A66697BC3723</string>
 				<key>modifiers</key>
 				<integer>0</integer>
 				<key>modifiersubtext</key>
@@ -159,20 +147,7 @@
 		<array>
 			<dict>
 				<key>destinationuid</key>
-				<string>B28DB2A1-54CD-4098-A01F-433BB205D0AF</string>
-				<key>modifiers</key>
-				<integer>0</integer>
-				<key>modifiersubtext</key>
-				<string></string>
-				<key>vitoclose</key>
-				<false/>
-			</dict>
-		</array>
-		<key>62A60D92-1699-41BE-A380-BDD8D5AE6061</key>
-		<array>
-			<dict>
-				<key>destinationuid</key>
-				<string>273944B0-0441-45C6-9F39-42CE28E0F8C3</string>
+				<string>2E537D85-C9B0-43CB-8485-B136A1ABB446</string>
 				<key>modifiers</key>
 				<integer>0</integer>
 				<key>modifiersubtext</key>
@@ -185,7 +160,7 @@
 		<array>
 			<dict>
 				<key>destinationuid</key>
-				<string>B28DB2A1-54CD-4098-A01F-433BB205D0AF</string>
+				<string>2E537D85-C9B0-43CB-8485-B136A1ABB446</string>
 				<key>modifiers</key>
 				<integer>0</integer>
 				<key>modifiersubtext</key>
@@ -198,33 +173,7 @@
 		<array>
 			<dict>
 				<key>destinationuid</key>
-				<string>B28DB2A1-54CD-4098-A01F-433BB205D0AF</string>
-				<key>modifiers</key>
-				<integer>0</integer>
-				<key>modifiersubtext</key>
-				<string></string>
-				<key>vitoclose</key>
-				<false/>
-			</dict>
-		</array>
-		<key>87F81E6D-5E14-41E0-B899-904283B2D432</key>
-		<array>
-			<dict>
-				<key>destinationuid</key>
-				<string>0C0D75D3-4308-412A-88EB-70A25A0CAC0B</string>
-				<key>modifiers</key>
-				<integer>0</integer>
-				<key>modifiersubtext</key>
-				<string></string>
-				<key>vitoclose</key>
-				<false/>
-			</dict>
-		</array>
-		<key>B28DB2A1-54CD-4098-A01F-433BB205D0AF</key>
-		<array>
-			<dict>
-				<key>destinationuid</key>
-				<string>87F81E6D-5E14-41E0-B899-904283B2D432</string>
+				<string>2E537D85-C9B0-43CB-8485-B136A1ABB446</string>
 				<key>modifiers</key>
 				<integer>0</integer>
 				<key>modifiersubtext</key>
@@ -296,52 +245,6 @@
 	<string>Pause Tabs</string>
 	<key>objects</key>
 	<array>
-		<dict>
-			<key>config</key>
-			<dict>
-				<key>concurrently</key>
-				<false/>
-				<key>escaping</key>
-				<integer>102</integer>
-				<key>script</key>
-				<string>Application('System Events').applicationProcesses.where({ frontmost: true }).name()[0]</string>
-				<key>scriptargtype</key>
-				<integer>1</integer>
-				<key>scriptfile</key>
-				<string></string>
-				<key>type</key>
-				<integer>7</integer>
-			</dict>
-			<key>type</key>
-			<string>alfred.workflow.action.script</string>
-			<key>uid</key>
-			<string>B28DB2A1-54CD-4098-A01F-433BB205D0AF</string>
-			<key>version</key>
-			<integer>2</integer>
-		</dict>
-		<dict>
-			<key>config</key>
-			<dict>
-				<key>concurrently</key>
-				<false/>
-				<key>escaping</key>
-				<integer>102</integer>
-				<key>script</key>
-				<string>echo "${alfred_version}" | cut -d. -f1 | tr -d '\n'</string>
-				<key>scriptargtype</key>
-				<integer>1</integer>
-				<key>scriptfile</key>
-				<string></string>
-				<key>type</key>
-				<integer>5</integer>
-			</dict>
-			<key>type</key>
-			<string>alfred.workflow.action.script</string>
-			<key>uid</key>
-			<string>62A60D92-1699-41BE-A380-BDD8D5AE6061</string>
-			<key>version</key>
-			<integer>2</integer>
-		</dict>
 		<dict>
 			<key>config</key>
 			<dict>
@@ -424,27 +327,6 @@ target_browsers.forEach(browser_name =&gt; {
 		<dict>
 			<key>config</key>
 			<dict>
-				<key>argumenttype</key>
-				<integer>2</integer>
-				<key>keyword</key>
-				<string>pauseall</string>
-				<key>subtext</key>
-				<string>Pause video and audio in all browser tabs</string>
-				<key>text</key>
-				<string>Pause All</string>
-				<key>withspace</key>
-				<false/>
-			</dict>
-			<key>type</key>
-			<string>alfred.workflow.input.keyword</string>
-			<key>uid</key>
-			<string>00AE9D16-4A4A-4371-9B6C-4A57F90B0FD8</string>
-			<key>version</key>
-			<integer>1</integer>
-		</dict>
-		<dict>
-			<key>config</key>
-			<dict>
 				<key>concurrently</key>
 				<false/>
 				<key>escaping</key>
@@ -476,6 +358,42 @@ Application('System Events')
 			<string>1D78F34E-7704-4119-8370-27B728AAE507</string>
 			<key>version</key>
 			<integer>2</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>tasksettings</key>
+				<dict/>
+				<key>taskuid</key>
+				<string>com.alfredapp.automation.core/macOS/app.current</string>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.automation.task</string>
+			<key>uid</key>
+			<string>2E537D85-C9B0-43CB-8485-B136A1ABB446</string>
+			<key>version</key>
+			<integer>1</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>argumenttype</key>
+				<integer>2</integer>
+				<key>keyword</key>
+				<string>pauseall</string>
+				<key>subtext</key>
+				<string>Pause video and audio in all browser tabs</string>
+				<key>text</key>
+				<string>Pause All</string>
+				<key>withspace</key>
+				<false/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.input.keyword</string>
+			<key>uid</key>
+			<string>00AE9D16-4A4A-4371-9B6C-4A57F90B0FD8</string>
+			<key>version</key>
+			<integer>1</integer>
 		</dict>
 		<dict>
 			<key>config</key>
@@ -575,91 +493,6 @@ fi</string>
 		<dict>
 			<key>config</key>
 			<dict>
-				<key>conditions</key>
-				<array>
-					<dict>
-						<key>inputstring</key>
-						<string></string>
-						<key>matchcasesensitive</key>
-						<false/>
-						<key>matchmode</key>
-						<integer>2</integer>
-						<key>matchstring</key>
-						<string>4</string>
-						<key>outputlabel</key>
-						<string>Update</string>
-						<key>uid</key>
-						<string>162C4049-4FA3-49CB-8E7E-9DC1B57AF737</string>
-					</dict>
-				</array>
-				<key>elselabel</key>
-				<string>Version 4</string>
-			</dict>
-			<key>type</key>
-			<string>alfred.workflow.utility.conditional</string>
-			<key>uid</key>
-			<string>273944B0-0441-45C6-9F39-42CE28E0F8C3</string>
-			<key>version</key>
-			<integer>1</integer>
-		</dict>
-		<dict>
-			<key>config</key>
-			<dict>
-				<key>argument</key>
-				<string></string>
-				<key>passthroughargument</key>
-				<false/>
-				<key>variables</key>
-				<dict>
-					<key>running_browsers</key>
-					<string>{query}</string>
-				</dict>
-			</dict>
-			<key>type</key>
-			<string>alfred.workflow.utility.argument</string>
-			<key>uid</key>
-			<string>01CE4C90-7E05-45C5-BE77-6769A3E5FA86</string>
-			<key>version</key>
-			<integer>1</integer>
-		</dict>
-		<dict>
-			<key>config</key>
-			<dict>
-				<key>type</key>
-				<integer>0</integer>
-			</dict>
-			<key>type</key>
-			<string>alfred.workflow.utility.transform</string>
-			<key>uid</key>
-			<string>E3552813-F045-4D3D-B373-63095EA7BF22</string>
-			<key>version</key>
-			<integer>1</integer>
-		</dict>
-		<dict>
-			<key>config</key>
-			<dict>
-				<key>argument</key>
-				<string></string>
-				<key>passthroughargument</key>
-				<false/>
-				<key>variables</key>
-				<dict>
-					<key>act_on</key>
-					<string>all</string>
-					<key>skip_active</key>
-					<string>false</string>
-				</dict>
-			</dict>
-			<key>type</key>
-			<string>alfred.workflow.utility.argument</string>
-			<key>uid</key>
-			<string>71E1A8E6-E19E-4CB5-A549-C3E381DB2DA9</string>
-			<key>version</key>
-			<integer>1</integer>
-		</dict>
-		<dict>
-			<key>config</key>
-			<dict>
 				<key>argument</key>
 				<string></string>
 				<key>passthroughargument</key>
@@ -686,104 +519,51 @@ fi</string>
 			<key>type</key>
 			<string>alfred.workflow.utility.transform</string>
 			<key>uid</key>
-			<string>87F81E6D-5E14-41E0-B899-904283B2D432</string>
+			<string>E3552813-F045-4D3D-B373-63095EA7BF22</string>
 			<key>version</key>
 			<integer>1</integer>
 		</dict>
 		<dict>
 			<key>config</key>
 			<dict>
-				<key>concurrently</key>
-				<false/>
-				<key>escaping</key>
-				<integer>0</integer>
-				<key>script</key>
-				<string># Special values for OneUpdater reuse
-readonly workflow_webaddress="$(/usr/libexec/PlistBuddy -c 'print webaddress' './info.plist')"
-readonly workflow_repo_name="$(basename "${workflow_webaddress}" | sed 's/-workflow$//')"
-
-# THESE VARIABLES MUST BE SET. SEE THE ONEUPDATER README FOR AN EXPLANATION OF EACH.
-readonly remote_info_plist="https://github.com/alfredapp/legacy-workflows/raw/main/Workflows/${workflow_repo_name}/info.plist"
-readonly workflow_url="https://github.com/alfredapp/legacy-workflows/raw/main/Workflows/${workflow_repo_name}/${workflow_repo_name}.alfredworkflow"
-readonly download_type='direct'
-readonly frequency_check='4'
-
-# FROM HERE ON, CODE SHOULD BE LEFT UNTOUCHED!
-function abort {
-  echo "${1}" &gt;&amp;2
-  exit 1
-}
-
-function url_exists {
-  curl --silent --location --output /dev/null --fail --range 0-0 "${1}"
-}
-
-function notification {
-  local -r notificator="$(find . -type d -name 'Notificator.app')"
-  if [[ -n "${notificator}" ]]; then
-    "${notificator}/Contents/Resources/Scripts/notificator" --message "${1}" --title "${alfred_workflow_name}" --subtitle 'A new version is available'
-    return
-  fi
-
-  local -r terminal_notifier="$(find . -type f -name 'terminal-notifier')"
-  if [[ -n "${terminal_notifier}" ]]; then
-    "${terminal_notifier}" -title "${alfred_workflow_name}" -subtitle 'A new version is available' -message "${1}"
-    return
-  fi
-
-  osascript -e "display notification \"${1}\" with title \"${alfred_workflow_name}\" subtitle \"A new version is available\""
-}
-
-# Local sanity checks
-readonly local_info_plist='info.plist'
-readonly local_version="$(/usr/libexec/PlistBuddy -c 'print version' "${local_info_plist}")"
-
-[[ -n "${local_version}" ]] || abort 'You need to set a workflow version in the configuration sheet.'
-[[ "${download_type}" =~ ^(direct|page|github_release)$ ]] || abort "'download_type' (${download_type}) needs to be one of 'direct', 'page', or 'github_release'."
-[[ "${frequency_check}" =~ ^[0-9]+$ ]] || abort "'frequency_check' (${frequency_check}) needs to be a number."
-
-# Check for updates
-if [[ $(find "${local_info_plist}" -mtime +"${frequency_check}"d) ]]; then
-  if ! url_exists "${remote_info_plist}"; then abort "'remote_info_plist' (${remote_info_plist}) appears to not be reachable."; fi # Remote sanity check
-
-  readonly tmp_file="$(mktemp)"
-  curl --silent --location --output "${tmp_file}" "${remote_info_plist}"
-  readonly remote_version="$(/usr/libexec/PlistBuddy -c 'print version' "${tmp_file}")"
-
-  if [[ "${local_version}" == "${remote_version}" ]]; then
-    touch "${local_info_plist}" # Reset timer by touching local file
-    exit 0
-  fi
-
-  if [[ "${download_type}" == 'page' ]]; then
-    notification 'Opening download page…'
-    open "${workflow_url}"
-    exit 0
-  fi
-
-  download_url="$([[ "${download_type}" == 'github_release' ]] &amp;&amp; curl --silent "https://api.github.com/repos/${workflow_url}/releases/latest" | grep 'browser_download_url' | head -1 | sed -E 's/.*browser_download_url": "(.*)"/\1/' || echo "${workflow_url}")"
-
-  if url_exists "${download_url}"; then
-    notification 'Downloading and installing…'
-    curl --silent --location --output "${HOME}/Downloads/${alfred_workflow_name}.alfredworkflow" "${download_url}"
-    open "${HOME}/Downloads/${alfred_workflow_name}.alfredworkflow"
-  else
-    abort "'workflow_url' (${download_url}) appears to not be reachable."
-  fi
-fi</string>
-				<key>scriptargtype</key>
-				<integer>1</integer>
-				<key>scriptfile</key>
+				<key>argument</key>
 				<string></string>
-				<key>type</key>
-				<integer>0</integer>
+				<key>passthroughargument</key>
+				<false/>
+				<key>variables</key>
+				<dict>
+					<key>running_browsers</key>
+					<string>{query}</string>
+				</dict>
 			</dict>
 			<key>type</key>
-			<string>alfred.workflow.action.script</string>
+			<string>alfred.workflow.utility.argument</string>
 			<key>uid</key>
-			<string>EB214D21-0962-40C8-A92D-64288B4B75E1</string>
+			<string>01CE4C90-7E05-45C5-BE77-6769A3E5FA86</string>
 			<key>version</key>
-			<integer>2</integer>
+			<integer>1</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>argument</key>
+				<string></string>
+				<key>passthroughargument</key>
+				<false/>
+				<key>variables</key>
+				<dict>
+					<key>act_on</key>
+					<string>all</string>
+					<key>skip_active</key>
+					<string>false</string>
+				</dict>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.utility.argument</string>
+			<key>uid</key>
+			<string>71E1A8E6-E19E-4CB5-A549-C3E381DB2DA9</string>
+			<key>version</key>
+			<integer>1</integer>
 		</dict>
 		<dict>
 			<key>config</key>
@@ -911,6 +691,35 @@ fi</string>
 		<dict>
 			<key>config</key>
 			<dict>
+				<key>action</key>
+				<integer>0</integer>
+				<key>argument</key>
+				<integer>0</integer>
+				<key>focusedappvariable</key>
+				<false/>
+				<key>focusedappvariablename</key>
+				<string></string>
+				<key>hotkey</key>
+				<integer>0</integer>
+				<key>hotmod</key>
+				<integer>0</integer>
+				<key>leftcursor</key>
+				<false/>
+				<key>modsmode</key>
+				<integer>0</integer>
+				<key>relatedAppsMode</key>
+				<integer>0</integer>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.trigger.hotkey</string>
+			<key>uid</key>
+			<string>C4D04842-3C36-45CF-BC40-02CB7A575B2C</string>
+			<key>version</key>
+			<integer>2</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
 				<key>argument</key>
 				<string></string>
 				<key>passthroughargument</key>
@@ -955,42 +764,13 @@ fi</string>
 			<key>type</key>
 			<string>alfred.workflow.trigger.hotkey</string>
 			<key>uid</key>
-			<string>C4D04842-3C36-45CF-BC40-02CB7A575B2C</string>
-			<key>version</key>
-			<integer>2</integer>
-		</dict>
-		<dict>
-			<key>config</key>
-			<dict>
-				<key>action</key>
-				<integer>0</integer>
-				<key>argument</key>
-				<integer>0</integer>
-				<key>focusedappvariable</key>
-				<false/>
-				<key>focusedappvariablename</key>
-				<string></string>
-				<key>hotkey</key>
-				<integer>0</integer>
-				<key>hotmod</key>
-				<integer>0</integer>
-				<key>leftcursor</key>
-				<false/>
-				<key>modsmode</key>
-				<integer>0</integer>
-				<key>relatedAppsMode</key>
-				<integer>0</integer>
-			</dict>
-			<key>type</key>
-			<string>alfred.workflow.trigger.hotkey</string>
-			<key>uid</key>
 			<string>0C7EFFD4-4267-4B4D-9C9A-1FEE01CF1079</string>
 			<key>version</key>
 			<integer>2</integer>
 		</dict>
 	</array>
 	<key>readme</key>
-	<string>Run `pauseall` to pause audio and video in tabs of all open web browers. `pauseothers` does the same except for the current tab. ⌘↵ makes it pause only tabs from the current browser.
+	<string>Run `pauseall` to pause audio and video in tabs of all open web browers. `pauseothers` does the same except for the current tab. ⌘↩ makes it pause only tabs from the current browser.
 
 ![Alfred search for pause](images/about/pause.png)
 
@@ -1004,16 +784,16 @@ You need to turn on `Allow JavaScript from Apple Events` in the browsers you wan
 			<key>note</key>
 			<string>Pause audio and video in all running browsers</string>
 			<key>xpos</key>
-			<integer>40</integer>
+			<real>40</real>
 			<key>ypos</key>
-			<integer>35</integer>
+			<real>35</real>
 		</dict>
 		<key>01CE4C90-7E05-45C5-BE77-6769A3E5FA86</key>
 		<dict>
 			<key>xpos</key>
-			<integer>970</integer>
+			<real>900</real>
 			<key>ypos</key>
-			<integer>65</integer>
+			<real>65</real>
 		</dict>
 		<key>0AE02C84-6E1A-4B21-98FE-A66697BC3723</key>
 		<dict>
@@ -1022,25 +802,25 @@ You need to turn on `Allow JavaScript from Apple Events` in the browsers you wan
 			<key>note</key>
 			<string>OneUpdater</string>
 			<key>xpos</key>
-			<integer>1535</integer>
+			<real>1165</real>
 			<key>ypos</key>
-			<integer>35</integer>
+			<real>35</real>
 		</dict>
 		<key>0C0D75D3-4308-412A-88EB-70A25A0CAC0B</key>
 		<dict>
 			<key>xpos</key>
-			<integer>635</integer>
+			<real>565</real>
 			<key>ypos</key>
-			<integer>65</integer>
+			<real>65</real>
 		</dict>
 		<key>0C7EFFD4-4267-4B4D-9C9A-1FEE01CF1079</key>
 		<dict>
 			<key>colorindex</key>
 			<integer>7</integer>
 			<key>xpos</key>
-			<integer>40</integer>
+			<real>40</real>
 			<key>ypos</key>
-			<integer>745</integer>
+			<real>745</real>
 		</dict>
 		<key>13397FC7-175F-4A5E-A5FB-B6F81FDF2229</key>
 		<dict>
@@ -1048,36 +828,34 @@ You need to turn on `Allow JavaScript from Apple Events` in the browsers you wan
 			<string>Act on all browsers
 Skip active tab</string>
 			<key>xpos</key>
-			<integer>265</integer>
+			<real>265</real>
 			<key>ypos</key>
-			<integer>490</integer>
+			<real>490</real>
 		</dict>
 		<key>1D78F34E-7704-4119-8370-27B728AAE507</key>
 		<dict>
 			<key>note</key>
 			<string>Grab all running web browsers</string>
 			<key>xpos</key>
-			<integer>720</integer>
+			<real>650</real>
 			<key>ypos</key>
-			<integer>35</integer>
+			<real>35</real>
 		</dict>
-		<key>273944B0-0441-45C6-9F39-42CE28E0F8C3</key>
+		<key>2E537D85-C9B0-43CB-8485-B136A1ABB446</key>
 		<dict>
-			<key>colorindex</key>
-			<integer>5</integer>
 			<key>xpos</key>
-			<integer>1395</integer>
+			<real>400</real>
 			<key>ypos</key>
-			<integer>55</integer>
+			<real>35</real>
 		</dict>
 		<key>35178710-6E1E-4C86-8348-0528C06FA47C</key>
 		<dict>
 			<key>note</key>
 			<string>Pause tabs</string>
 			<key>xpos</key>
-			<integer>1050</integer>
+			<real>980</real>
 			<key>ypos</key>
-			<integer>35</integer>
+			<real>35</real>
 		</dict>
 		<key>4C3CB545-F2F5-427E-AC6C-3981B0E664F7</key>
 		<dict>
@@ -1086,9 +864,9 @@ Skip active tab</string>
 			<key>note</key>
 			<string>Pause audio and video in frontmost app</string>
 			<key>xpos</key>
-			<integer>40</integer>
+			<real>40</real>
 			<key>ypos</key>
-			<integer>460</integer>
+			<real>460</real>
 		</dict>
 		<key>4E6BB00F-78D0-4401-B0D8-12DF635CB716</key>
 		<dict>
@@ -1096,20 +874,9 @@ Skip active tab</string>
 			<string>Act on frontmost app
 Do not skip active tab</string>
 			<key>xpos</key>
-			<integer>260</integer>
+			<real>260</real>
 			<key>ypos</key>
-			<integer>195</integer>
-		</dict>
-		<key>62A60D92-1699-41BE-A380-BDD8D5AE6061</key>
-		<dict>
-			<key>colorindex</key>
-			<integer>5</integer>
-			<key>note</key>
-			<string>Major Alfred version</string>
-			<key>xpos</key>
-			<integer>1235</integer>
-			<key>ypos</key>
-			<integer>35</integer>
+			<real>195</real>
 		</dict>
 		<key>6E52B082-84A2-45E8-9A2C-D2231AE941D4</key>
 		<dict>
@@ -1117,9 +884,9 @@ Do not skip active tab</string>
 			<string>Act on frontmost app
 Skip active tab</string>
 			<key>xpos</key>
-			<integer>265</integer>
+			<real>265</real>
 			<key>ypos</key>
-			<integer>620</integer>
+			<real>620</real>
 		</dict>
 		<key>71E1A8E6-E19E-4CB5-A549-C3E381DB2DA9</key>
 		<dict>
@@ -1127,74 +894,49 @@ Skip active tab</string>
 			<string>Act on all browsers
 Do not skip active tab</string>
 			<key>xpos</key>
-			<integer>260</integer>
+			<real>260</real>
 			<key>ypos</key>
-			<integer>65</integer>
-		</dict>
-		<key>87F81E6D-5E14-41E0-B899-904283B2D432</key>
-		<dict>
-			<key>xpos</key>
-			<integer>555</integer>
-			<key>ypos</key>
-			<integer>65</integer>
-		</dict>
-		<key>B28DB2A1-54CD-4098-A01F-433BB205D0AF</key>
-		<dict>
-			<key>note</key>
-			<string>Grab frontmost app</string>
-			<key>xpos</key>
-			<integer>400</integer>
-			<key>ypos</key>
-			<integer>35</integer>
+			<real>65</real>
 		</dict>
 		<key>C4D04842-3C36-45CF-BC40-02CB7A575B2C</key>
 		<dict>
 			<key>colorindex</key>
 			<integer>7</integer>
 			<key>xpos</key>
-			<integer>40</integer>
+			<real>40</real>
 			<key>ypos</key>
-			<integer>620</integer>
+			<real>620</real>
 		</dict>
 		<key>E3552813-F045-4D3D-B373-63095EA7BF22</key>
 		<dict>
 			<key>xpos</key>
-			<integer>885</integer>
+			<real>815</real>
 			<key>ypos</key>
-			<integer>65</integer>
+			<real>65</real>
 		</dict>
 		<key>E40D67BA-284C-4AB9-A184-D89EF55B0CBA</key>
 		<dict>
 			<key>colorindex</key>
 			<integer>9</integer>
 			<key>xpos</key>
-			<integer>40</integer>
+			<real>40</real>
 			<key>ypos</key>
-			<integer>195</integer>
+			<real>195</real>
 		</dict>
 		<key>E77C8C05-99B1-43FE-8519-AB0F86FC6A11</key>
 		<dict>
 			<key>colorindex</key>
 			<integer>9</integer>
 			<key>xpos</key>
-			<integer>40</integer>
+			<real>40</real>
 			<key>ypos</key>
-			<integer>320</integer>
-		</dict>
-		<key>EB214D21-0962-40C8-A92D-64288B4B75E1</key>
-		<dict>
-			<key>colorindex</key>
-			<integer>12</integer>
-			<key>note</key>
-			<string>OneUpdater</string>
-			<key>xpos</key>
-			<integer>1535</integer>
-			<key>ypos</key>
-			<integer>185</integer>
+			<real>320</real>
 		</dict>
 	</dict>
+	<key>userconfigurationconfig</key>
+	<array/>
 	<key>version</key>
-	<string>2022.1</string>
+	<string>2022.2</string>
 	<key>webaddress</key>
 	<string>https://github.com/alfredapp/pause-tabs-workflow/</string>
 </dict>
