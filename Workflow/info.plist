@@ -380,7 +380,7 @@ Application('System Events')
 				<key>argumenttype</key>
 				<integer>2</integer>
 				<key>keyword</key>
-				<string>pauseall</string>
+				<string>{var:pause_all_keyword}</string>
 				<key>subtext</key>
 				<string>Pause video and audio in all browser tabs</string>
 				<key>text</key>
@@ -651,7 +651,7 @@ fi</string>
 				<key>argumenttype</key>
 				<integer>2</integer>
 				<key>keyword</key>
-				<string>pauseothers</string>
+				<string>{var:pause_others_keyword}</string>
 				<key>subtext</key>
 				<string>Pause video and audio in all browser tabs except current one</string>
 				<key>text</key>
@@ -770,11 +770,15 @@ fi</string>
 		</dict>
 	</array>
 	<key>readme</key>
-	<string>Run `pauseall` to pause audio and video in tabs of all open web browers. `pauseothers` does the same except for the current tab. ⌘↩ makes it pause only tabs from the current browser.
+	<string>## Setup
 
-![Alfred search for pause](images/about/pause.png)
+Turn on `Allow JavaScript from Apple Events` in the browsers you want to control. Use the Help search in the menubar to find it.
 
-You need to turn on `Allow JavaScript from Apple Events` in the browsers you want to control for the Workflow to work.</string>
+## Usage
+
+Run the Pause All Keyword (default: `pause all`) to pause audio and video in tabs of all open web browers. The Pause Others Keyword (default: `pause others`) does the same except for the current tab. ⌘↩ makes it pause only tabs from the current browser.
+
+![Alfred search for pause](images/about/pause.png)</string>
 	<key>uidata</key>
 	<dict>
 		<key>00AE9D16-4A4A-4371-9B6C-4A57F90B0FD8</key>
@@ -934,9 +938,52 @@ Do not skip active tab</string>
 		</dict>
 	</dict>
 	<key>userconfigurationconfig</key>
-	<array/>
+	<array>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>default</key>
+				<string>pause all</string>
+				<key>placeholder</key>
+				<string></string>
+				<key>required</key>
+				<false/>
+				<key>trim</key>
+				<true/>
+			</dict>
+			<key>description</key>
+			<string></string>
+			<key>label</key>
+			<string>Pause All Keyword</string>
+			<key>type</key>
+			<string>textfield</string>
+			<key>variable</key>
+			<string>pause_all_keyword</string>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>default</key>
+				<string>pause others</string>
+				<key>placeholder</key>
+				<string></string>
+				<key>required</key>
+				<false/>
+				<key>trim</key>
+				<true/>
+			</dict>
+			<key>description</key>
+			<string></string>
+			<key>label</key>
+			<string>Pause Others Keyword</string>
+			<key>type</key>
+			<string>textfield</string>
+			<key>variable</key>
+			<string>pause_others_keyword</string>
+		</dict>
+	</array>
 	<key>version</key>
-	<string>2022.2</string>
+	<string>2022.3</string>
 	<key>webaddress</key>
 	<string>https://github.com/alfredapp/pause-tabs-workflow/</string>
 </dict>
