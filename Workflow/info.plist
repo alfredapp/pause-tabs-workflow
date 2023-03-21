@@ -866,7 +866,7 @@ Do not skip active tab</string>
 		</dict>
 	</array>
 	<key>version</key>
-	<string>2022.4</string>
+	<string>2023.1</string>
 	<key>webaddress</key>
 	<string>https://github.com/alfredapp/pause-tabs-workflow/</string>
 </dict>
