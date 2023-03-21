@@ -242,6 +242,77 @@
 				<key>escaping</key>
 				<integer>102</integer>
 				<key>script</key>
+				<string>const chromium_variants = ['Google Chrome', 'Chromium', 'Opera', 'Vivaldi', 'Brave Browser', 'Microsoft Edge']
+const webkit_variants = ['Safari', 'Webkit']
+const browser_variants = chromium_variants.concat(webkit_variants)
+
+Application('System Events')
+  .applicationProcesses.where({ backgroundOnly: false })()
+  .filter(app =&gt; {
+    app_name = app.name()
+    if (app_name.startsWith('firefox')) console.log('Firefox is not scriptable')
+    return browser_variants.some(variant =&gt; app_name.startsWith(variant))
+  })
+  .map(browser =&gt; browser.name())
+  .join(',')</string>
+				<key>scriptargtype</key>
+				<integer>1</integer>
+				<key>scriptfile</key>
+				<string></string>
+				<key>type</key>
+				<integer>7</integer>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.script</string>
+			<key>uid</key>
+			<string>1D78F34E-7704-4119-8370-27B728AAE507</string>
+			<key>version</key>
+			<integer>2</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>tasksettings</key>
+				<dict/>
+				<key>taskuid</key>
+				<string>com.alfredapp.automation.core/macOS/app.current</string>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.automation.task</string>
+			<key>uid</key>
+			<string>2E537D85-C9B0-43CB-8485-B136A1ABB446</string>
+			<key>version</key>
+			<integer>1</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>argumenttype</key>
+				<integer>2</integer>
+				<key>keyword</key>
+				<string>{var:pause_all_keyword}</string>
+				<key>subtext</key>
+				<string>Pause video and audio in all browser tabs</string>
+				<key>text</key>
+				<string>Pause All</string>
+				<key>withspace</key>
+				<false/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.input.keyword</string>
+			<key>uid</key>
+			<string>00AE9D16-4A4A-4371-9B6C-4A57F90B0FD8</string>
+			<key>version</key>
+			<integer>1</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>concurrently</key>
+				<false/>
+				<key>escaping</key>
+				<integer>102</integer>
+				<key>script</key>
 				<string>// Grab environment variables
 ObjC.import('stdlib') // For $.getenv
 
@@ -312,77 +383,6 @@ target_browsers.forEach(browser_name =&gt; {
 			<string>35178710-6E1E-4C86-8348-0528C06FA47C</string>
 			<key>version</key>
 			<integer>2</integer>
-		</dict>
-		<dict>
-			<key>config</key>
-			<dict>
-				<key>concurrently</key>
-				<false/>
-				<key>escaping</key>
-				<integer>102</integer>
-				<key>script</key>
-				<string>const chromium_variants = ['Google Chrome', 'Chromium', 'Opera', 'Vivaldi', 'Brave Browser', 'Microsoft Edge']
-const webkit_variants = ['Safari', 'Webkit']
-const browser_variants = chromium_variants.concat(webkit_variants)
-
-Application('System Events')
-  .applicationProcesses.where({ backgroundOnly: false })()
-  .filter(app =&gt; {
-    app_name = app.name()
-    if (app_name.startsWith('firefox')) console.log('Firefox is not scriptable')
-    return browser_variants.some(variant =&gt; app_name.startsWith(variant))
-  })
-  .map(browser =&gt; browser.name())
-  .join(',')</string>
-				<key>scriptargtype</key>
-				<integer>1</integer>
-				<key>scriptfile</key>
-				<string></string>
-				<key>type</key>
-				<integer>7</integer>
-			</dict>
-			<key>type</key>
-			<string>alfred.workflow.action.script</string>
-			<key>uid</key>
-			<string>1D78F34E-7704-4119-8370-27B728AAE507</string>
-			<key>version</key>
-			<integer>2</integer>
-		</dict>
-		<dict>
-			<key>config</key>
-			<dict>
-				<key>tasksettings</key>
-				<dict/>
-				<key>taskuid</key>
-				<string>com.alfredapp.automation.core/macOS/app.current</string>
-			</dict>
-			<key>type</key>
-			<string>alfred.workflow.automation.task</string>
-			<key>uid</key>
-			<string>2E537D85-C9B0-43CB-8485-B136A1ABB446</string>
-			<key>version</key>
-			<integer>1</integer>
-		</dict>
-		<dict>
-			<key>config</key>
-			<dict>
-				<key>argumenttype</key>
-				<integer>2</integer>
-				<key>keyword</key>
-				<string>{var:pause_all_keyword}</string>
-				<key>subtext</key>
-				<string>Pause video and audio in all browser tabs</string>
-				<key>text</key>
-				<string>Pause All</string>
-				<key>withspace</key>
-				<false/>
-			</dict>
-			<key>type</key>
-			<string>alfred.workflow.input.keyword</string>
-			<key>uid</key>
-			<string>00AE9D16-4A4A-4371-9B6C-4A57F90B0FD8</string>
-			<key>version</key>
-			<integer>1</integer>
 		</dict>
 		<dict>
 			<key>config</key>
@@ -670,7 +670,7 @@ Turn on `Allow JavaScript from Apple Events` in the browsers you want to control
 
 ## Usage
 
-Pause audio and video in tabs of all open web browsers via the Pause All Keyword (default: `pause all`). The Pause Others Keyword (default: `pause others`) does the same except for the current tab. &lt;kbd&gt;⌘&lt;/kbd&gt;&lt;kbd&gt;↩&lt;/kbd&gt; makes it only pause tabs from the current browser.
+Pause audio and video in tabs of all open web browsers via the `pause all` keyword. `pause others` does the same except for the current tab. &lt;kbd&gt;⌘&lt;/kbd&gt;&lt;kbd&gt;↩&lt;/kbd&gt; makes it only pause tabs from the current browser.
 
 ![Alfred search for pause](images/about/pause.png)</string>
 	<key>uidata</key>
