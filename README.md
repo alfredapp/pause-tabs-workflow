@@ -4,8 +4,6 @@ Pause audio and video in web browser tabs
 
 [⤓ Install on the Alfred Gallery](https://alfred.app/workflows/alfredapp/pause-tabs)
 
-> On Alfred 4 use <a href='https://github.com/alfredapp/pause-tabs-workflow/releases/download/2022.1/Pause.Tabs.alfredworkflow'>alternative link</a>
-
 ## Setup
 
 Turn on `Allow JavaScript from Apple Events` in the browsers you want to control. Use the Help search in the menubar to find it.
