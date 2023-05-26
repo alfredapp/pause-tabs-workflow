@@ -243,7 +243,7 @@
 				<integer>102</integer>
 				<key>script</key>
 				<string>const chromium_variants = ['Google Chrome', 'Chromium', 'Opera', 'Vivaldi', 'Brave Browser', 'Microsoft Edge']
-const webkit_variants = ['Safari', 'Webkit']
+const webkit_variants = ['Safari', 'Webkit', 'Orion']
 const browser_variants = chromium_variants.concat(webkit_variants)
 
 Application('System Events')
@@ -337,7 +337,7 @@ const pause_player = `
 `
 
 // Set up
-const webkit_variants = ['Safari', 'Webkit']
+const webkit_variants = ['Safari', 'Webkit', 'Orion']
 const chromium_variants = ['Google Chrome', 'Chromium', 'Opera', 'Vivaldi', 'Brave Browser', 'Microsoft Edge']
 
 target_browsers = (act_on === 'all') ? running_browsers.split(',') : [frontmost_name]
