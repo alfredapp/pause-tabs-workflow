@@ -291,6 +291,8 @@ Application('System Events')
 				<integer>2</integer>
 				<key>keyword</key>
 				<string>{var:pause_all_keyword}</string>
+				<key>skipuniversalaction</key>
+				<true/>
 				<key>subtext</key>
 				<string>Pause video and audio in all browser tabs</string>
 				<key>text</key>
@@ -546,6 +548,8 @@ target_browsers.forEach(browser_name =&gt; {
 				<integer>2</integer>
 				<key>keyword</key>
 				<string>{var:pause_others_keyword}</string>
+				<key>skipuniversalaction</key>
+				<true/>
 				<key>subtext</key>
 				<string>Pause video and audio in all browser tabs except current one</string>
 				<key>text</key>
