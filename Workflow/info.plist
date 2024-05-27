@@ -350,8 +350,8 @@ target_browsers.forEach(browser_name =&gt; {
 
   // Webkit variants
   if (webkit_variants.some(variant =&gt; browser_name.startsWith(variant))) {
-    browser.windows().forEach(browser_window =&gt; {
-      browser_window.tabs().forEach(browser_tab =&gt; {
+    browser.windows()?.forEach(browser_window =&gt; {
+      browser_window.tabs()?.forEach(browser_tab =&gt; {
         // Skip current tab if conditions are met
         if (skip_active === 'true' &amp;&amp; frontmost_name === browser_name &amp;&amp; browser_window.id() === browser.windows()[0].id() &amp;&amp; browser_tab.index() === browser_window.currentTab.index()) return
         // Pause tab
@@ -360,8 +360,8 @@ target_browsers.forEach(browser_name =&gt; {
     })
   // Chromium Variants
   } else if (chromium_variants.some(variant =&gt; browser_name.startsWith(variant))) {
-    browser.windows().forEach(browser_window =&gt; {
-      browser_window.tabs().forEach(browser_tab =&gt; {
+    browser.windows()?.forEach(browser_window =&gt; {
+      browser_window.tabs()?.forEach(browser_tab =&gt; {
         // Skip current tab if conditions are met
         if (skip_active === 'true' &amp;&amp; frontmost_name === browser_name &amp;&amp; browser_window.id() === browser.windows()[0].id() &amp;&amp; browser_tab.id() === browser_window.activeTab.id()) return
         // Pause tab
