@@ -12,4 +12,4 @@ Turn on `Allow JavaScript from Apple Events` in the browsers you want to control
 
 Pause audio and video in tabs of all open web browsers via the `pause all` keyword. `pause others` does the same except for the current tab. <kbd>⌘</kbd><kbd>↩&#xFE0E;</kbd> makes it only pause tabs from the current browser.
 
-![Alfred search for pause](Workflow/images/about/pause.png)
+![Alfred search for pause](Workflow/images/about/pauses.png)
