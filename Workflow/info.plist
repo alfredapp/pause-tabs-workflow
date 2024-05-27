@@ -242,9 +242,9 @@
 				<key>escaping</key>
 				<integer>102</integer>
 				<key>script</key>
-				<string>const chromium_variants = ['Google Chrome', 'Chromium', 'Opera', 'Vivaldi', 'Brave Browser', 'Microsoft Edge']
-const webkit_variants = ['Safari', 'Webkit', 'Orion']
-const browser_variants = chromium_variants.concat(webkit_variants)
+				<string>const chromiumVariants = ['Google Chrome', 'Chromium', 'Opera', 'Vivaldi', 'Brave Browser', 'Microsoft Edge']
+const webkitVariants = ['Safari', 'Webkit', 'Orion']
+const browser_variants = chromiumVariants.concat(webkitVariants)
 
 Application('System Events')
   .applicationProcesses.where({ backgroundOnly: false })()
@@ -319,7 +319,7 @@ Application('System Events')
 ObjC.import('stdlib') // For $.getenv
 
 const act_on = $.getenv('act_on')
-const skip_active = $.getenv('skip_active')
+const skipActive = $.getenv('skipActive')
 const frontmost_name = $.getenv('frontmost_name')
 const running_browsers = $.getenv('running_browsers')
 
@@ -339,31 +339,31 @@ const pause_player = `
 `
 
 // Set up
-const webkit_variants = ['Safari', 'Webkit', 'Orion']
-const chromium_variants = ['Google Chrome', 'Chromium', 'Opera', 'Vivaldi', 'Brave Browser', 'Microsoft Edge']
+const webkitVariants = ['Safari', 'Webkit', 'Orion']
+const chromiumVariants = ['Google Chrome', 'Chromium', 'Opera', 'Vivaldi', 'Brave Browser', 'Microsoft Edge']
 
-target_browsers = (act_on === 'all') ? running_browsers.split(',') : [frontmost_name]
+targetBrowsers = (act_on === 'all') ? running_browsers.split(',') : [frontmost_name]
 
 // Pause tabs
-target_browsers.forEach(browser_name =&gt; {
+targetBrowsers.forEach(browser_name =&gt; {
   browser = Application(browser_name)
 
   // Webkit variants
-  if (webkit_variants.some(variant =&gt; browser_name.startsWith(variant))) {
-    browser.windows()?.forEach(browser_window =&gt; {
-      browser_window.tabs()?.forEach(browser_tab =&gt; {
+  if (webkitVariants.some(variant =&gt; browser_name.startsWith(variant))) {
+    browser.windows()?.forEach(browserWindow =&gt; {
+      browserWindow.tabs()?.forEach(browser_tab =&gt; {
         // Skip current tab if conditions are met
-        if (skip_active === 'true' &amp;&amp; frontmost_name === browser_name &amp;&amp; browser_window.id() === browser.windows()[0].id() &amp;&amp; browser_tab.index() === browser_window.currentTab.index()) return
+        if (skipActive === 'true' &amp;&amp; frontmost_name === browser_name &amp;&amp; browserWindow.id() === browser.windows()[0].id() &amp;&amp; browser_tab.index() === browserWindow.currentTab.index()) return
         // Pause tab
         browser.doJavaScript(pause_player, {in: browser_tab})
       })
     })
   // Chromium Variants
-  } else if (chromium_variants.some(variant =&gt; browser_name.startsWith(variant))) {
-    browser.windows()?.forEach(browser_window =&gt; {
-      browser_window.tabs()?.forEach(browser_tab =&gt; {
+  } else if (chromiumVariants.some(variant =&gt; browser_name.startsWith(variant))) {
+    browser.windows()?.forEach(browserWindow =&gt; {
+      browserWindow.tabs()?.forEach(browser_tab =&gt; {
         // Skip current tab if conditions are met
-        if (skip_active === 'true' &amp;&amp; frontmost_name === browser_name &amp;&amp; browser_window.id() === browser.windows()[0].id() &amp;&amp; browser_tab.id() === browser_window.activeTab.id()) return
+        if (skipActive === 'true' &amp;&amp; frontmost_name === browser_name &amp;&amp; browserWindow.id() === browser.windows()[0].id() &amp;&amp; browser_tab.id() === browserWindow.activeTab.id()) return
         // Pause tab
         browser_tab.execute({javascript: pause_player})
       })
@@ -450,7 +450,7 @@ target_browsers.forEach(browser_name =&gt; {
 				<dict>
 					<key>act_on</key>
 					<string>all</string>
-					<key>skip_active</key>
+					<key>skipActive</key>
 					<string>false</string>
 				</dict>
 			</dict>
@@ -472,7 +472,7 @@ target_browsers.forEach(browser_name =&gt; {
 				<dict>
 					<key>act_on</key>
 					<string>frontmost</string>
-					<key>skip_active</key>
+					<key>skipActive</key>
 					<string>false</string>
 				</dict>
 			</dict>
@@ -575,7 +575,7 @@ target_browsers.forEach(browser_name =&gt; {
 				<dict>
 					<key>act_on</key>
 					<string>all</string>
-					<key>skip_active</key>
+					<key>skipActive</key>
 					<string>true</string>
 				</dict>
 			</dict>
@@ -626,7 +626,7 @@ target_browsers.forEach(browser_name =&gt; {
 				<dict>
 					<key>act_on</key>
 					<string>frontmost</string>
-					<key>skip_active</key>
+					<key>skipActive</key>
 					<string>true</string>
 				</dict>
 			</dict>
@@ -676,7 +676,7 @@ Turn on `Allow JavaScript from Apple Events` in the browsers you want to control
 
 Pause audio and video in tabs of all open web browsers via the `pause all` keyword. `pause others` does the same except for the current tab. &lt;kbd&gt;⌘&lt;/kbd&gt;&lt;kbd&gt;↩&lt;/kbd&gt; makes it only pause tabs from the current browser.
 
-![Alfred search for pause](images/about/pause.png)</string>
+![Alfred search for pause](images/about/pauses.png)</string>
 	<key>uidata</key>
 	<dict>
 		<key>00AE9D16-4A4A-4371-9B6C-4A57F90B0FD8</key>
