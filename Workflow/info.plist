@@ -242,19 +242,19 @@
 				<key>escaping</key>
 				<integer>102</integer>
 				<key>script</key>
-				<string>const chromiumVariants = ['Google Chrome', 'Chromium', 'Opera', 'Vivaldi', 'Brave Browser', 'Microsoft Edge']
-const webkitVariants = ['Safari', 'Webkit', 'Orion']
-const browser_variants = chromiumVariants.concat(webkitVariants)
+				<string>const chromiumVariants = ["Google Chrome", "Chromium", "Opera", "Vivaldi", "Brave Browser", "Microsoft Edge"]
+const webkitVariants = ["Safari", "Webkit", "Orion"]
+const browserVariants = chromiumVariants.concat(webkitVariants)
 
-Application('System Events')
+Application("System Events")
   .applicationProcesses.where({ backgroundOnly: false })()
   .filter(app =&gt; {
-    app_name = app.name()
-    if (app_name.startsWith('firefox')) console.log('Firefox is not scriptable')
-    return browser_variants.some(variant =&gt; app_name.startsWith(variant))
+    appName = app.name()
+    if (appName.startsWith("firefox")) console.log("Firefox is not scriptable")
+    return browserVariants.some(variant =&gt; appName.startsWith(variant))
   })
   .map(browser =&gt; browser.name())
-  .join(',')</string>
+  .join(",")</string>
 				<key>scriptargtype</key>
 				<integer>1</integer>
 				<key>scriptfile</key>
@@ -316,15 +316,20 @@ Application('System Events')
 				<integer>102</integer>
 				<key>script</key>
 				<string>// Grab environment variables
-ObjC.import('stdlib') // For $.getenv
+function envVar(varName) {
+  return $.NSProcessInfo
+    .processInfo
+    .environment
+    .objectForKey(varName).js
+}
 
-const act_on = $.getenv('act_on')
-const skipActive = $.getenv('skipActive')
-const frontmost_name = $.getenv('frontmost_name')
-const running_browsers = $.getenv('running_browsers')
+const actOn = envVar("act_on")
+const skipActive = envVar("skip_active") === "1"
+const frontmostName = envVar("frontmost_name")
+const runningBrowsers = envVar("running_browsers")
 
-// Helpers
-const pause_player = `
+// Code to pause
+const pausePlayer = `
   document.querySelectorAll("video, audio").forEach(e =&gt; e.pause())
 
   // Pause embedded YouTube players
@@ -339,37 +344,37 @@ const pause_player = `
 `
 
 // Set up
-const webkitVariants = ['Safari', 'Webkit', 'Orion']
-const chromiumVariants = ['Google Chrome', 'Chromium', 'Opera', 'Vivaldi', 'Brave Browser', 'Microsoft Edge']
+const webkitVariants = ["Safari", "Webkit", "Orion"]
+const chromiumVariants = ["Google Chrome", "Chromium", "Opera", "Vivaldi", "Brave Browser", "Microsoft Edge"]
 
-targetBrowsers = (act_on === 'all') ? running_browsers.split(',') : [frontmost_name]
+targetBrowsers = (actOn === "all") ? runningBrowsers.split(",") : [frontmostName]
 
 // Pause tabs
-targetBrowsers.forEach(browser_name =&gt; {
-  browser = Application(browser_name)
+targetBrowsers.forEach(browserName =&gt; {
+  browser = Application(browserName)
 
   // Webkit variants
-  if (webkitVariants.some(variant =&gt; browser_name.startsWith(variant))) {
+  if (webkitVariants.some(variant =&gt; browserName.startsWith(variant))) {
     browser.windows()?.forEach(browserWindow =&gt; {
-      browserWindow.tabs()?.forEach(browser_tab =&gt; {
+      browserWindow.tabs()?.forEach(browserTab =&gt; {
         // Skip current tab if conditions are met
-        if (skipActive === 'true' &amp;&amp; frontmost_name === browser_name &amp;&amp; browserWindow.id() === browser.windows()[0].id() &amp;&amp; browser_tab.index() === browserWindow.currentTab.index()) return
+        if (skipActive &amp;&amp; frontmostName === browserName &amp;&amp; browserWindow.id() === browser.windows()[0].id() &amp;&amp; browserTab.index() === browserWindow.currentTab.index()) return
         // Pause tab
-        browser.doJavaScript(pause_player, {in: browser_tab})
+        browser.doJavaScript(pausePlayer, {in: browserTab})
       })
     })
   // Chromium Variants
-  } else if (chromiumVariants.some(variant =&gt; browser_name.startsWith(variant))) {
+  } else if (chromiumVariants.some(variant =&gt; browserName.startsWith(variant))) {
     browser.windows()?.forEach(browserWindow =&gt; {
-      browserWindow.tabs()?.forEach(browser_tab =&gt; {
+      browserWindow.tabs()?.forEach(browserTab =&gt; {
         // Skip current tab if conditions are met
-        if (skipActive === 'true' &amp;&amp; frontmost_name === browser_name &amp;&amp; browserWindow.id() === browser.windows()[0].id() &amp;&amp; browser_tab.id() === browserWindow.activeTab.id()) return
+        if (skipActive &amp;&amp; frontmostName === browserName &amp;&amp; browserWindow.id() === browser.windows()[0].id() &amp;&amp; browserTab.id() === browserWindow.activeTab.id()) return
         // Pause tab
-        browser_tab.execute({javascript: pause_player})
+        browserTab.execute({javascript: pausePlayer})
       })
     })
   } else {
-    throw new Error(browser_name + ' is not a supported browser')
+    throw new Error(browserName + " is not a supported browser")
   }
 })</string>
 				<key>scriptargtype</key>
@@ -450,8 +455,8 @@ targetBrowsers.forEach(browser_name =&gt; {
 				<dict>
 					<key>act_on</key>
 					<string>all</string>
-					<key>skipActive</key>
-					<string>false</string>
+					<key>skip_active</key>
+					<string>0</string>
 				</dict>
 			</dict>
 			<key>type</key>
@@ -472,8 +477,8 @@ targetBrowsers.forEach(browser_name =&gt; {
 				<dict>
 					<key>act_on</key>
 					<string>frontmost</string>
-					<key>skipActive</key>
-					<string>false</string>
+					<key>skip_active</key>
+					<string>0</string>
 				</dict>
 			</dict>
 			<key>type</key>
@@ -575,8 +580,8 @@ targetBrowsers.forEach(browser_name =&gt; {
 				<dict>
 					<key>act_on</key>
 					<string>all</string>
-					<key>skipActive</key>
-					<string>true</string>
+					<key>skip_active</key>
+					<string>1</string>
 				</dict>
 			</dict>
 			<key>type</key>
@@ -626,8 +631,8 @@ targetBrowsers.forEach(browser_name =&gt; {
 				<dict>
 					<key>act_on</key>
 					<string>frontmost</string>
-					<key>skipActive</key>
-					<string>true</string>
+					<key>skip_active</key>
+					<string>1</string>
 				</dict>
 			</dict>
 			<key>type</key>
