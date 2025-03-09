@@ -675,13 +675,16 @@ targetBrowsers.forEach(browserName =&gt; {
 	<key>readme</key>
 	<string>## Setup
 
-Turn on `Allow JavaScript from Apple Events` in the browsers you want to control. Use the Help search in the menubar to find it.
+Turn on `Allow JavaScript from Apple Events` in the browsers you want to control. The exact location of the option depends on the browser.
 
 ## Usage
 
-Pause audio and video in tabs of all open web browsers via the `pause all` keyword. `pause others` does the same except for the current tab. &lt;kbd&gt;⌘&lt;/kbd&gt;&lt;kbd&gt;↩&lt;/kbd&gt; makes it only pause tabs from the current browser.
+Pause audio and video in all tabs of all open web browsers via the `pause all` keyword. `pause others` does the same except for the current tab.
 
-![Alfred search for pause](images/about/pauses.png)</string>
+![Alfred search for pause](images/about/pauses.png)
+
+* &lt;kbd&gt;↩&lt;/kbd&gt; Pause tabs in all supported browsers.
+* &lt;kbd&gt;⌘&lt;/kbd&gt;&lt;kbd&gt;↩&lt;/kbd&gt; Pause tabs in current browser.</string>
 	<key>uidata</key>
 	<dict>
 		<key>00AE9D16-4A4A-4371-9B6C-4A57F90B0FD8</key>
