@@ -246,14 +246,15 @@
 const webkitVariants = ["Safari", "Webkit", "Orion"]
 const browserVariants = chromiumVariants.concat(webkitVariants)
 
-Application("System Events")
+const runningAppNames = Application("System Events")
   .applicationProcesses.where({ backgroundOnly: false })()
-  .filter(app =&gt; {
-    appName = app.name()
-    if (appName.startsWith("firefox")) console.log("Firefox is not scriptable")
-    return browserVariants.some(variant =&gt; appName.startsWith(variant))
-  })
-  .map(browser =&gt; browser.name())
+  .map(app =&gt; app.name())
+
+if (runningAppNames.find(appName =&gt; appName.startsWith("firefox")))
+  console.log("Firefox is not scriptable")
+
+runningAppNames
+  .filter(appName =&gt; browserVariants.some(variant =&gt; appName.startsWith(variant)))
   .join(",")</string>
 				<key>scriptargtype</key>
 				<integer>1</integer>
@@ -326,7 +327,7 @@ function envVar(varName) {
 const actOn = envVar("act_on")
 const skipActive = envVar("skip_active") === "1"
 const frontmostName = envVar("frontmost_name")
-const runningBrowsers = envVar("running_browsers")
+const runningBrowsers = envVar("running_browsers").split(",")
 
 // Code to pause
 const pausePlayer = `
@@ -347,7 +348,7 @@ const pausePlayer = `
 const webkitVariants = ["Safari", "Webkit", "Orion"]
 const chromiumVariants = ["Google Chrome", "Chromium", "Opera", "Vivaldi", "Brave Browser", "Microsoft Edge"]
 
-targetBrowsers = (actOn === "all") ? runningBrowsers.split(",") : [frontmostName]
+const targetBrowsers = (actOn === "all") ? runningBrowsers : [frontmostName]
 
 // Pause tabs
 targetBrowsers.forEach(browserName =&gt; {
