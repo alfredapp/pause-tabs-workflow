@@ -333,15 +333,20 @@ const runningBrowsers = envVar("running_browsers").split(",")
 const pausePlayer = `
   document.querySelectorAll("video, audio").forEach(e =&gt; e.pause())
 
-  // Pause embedded YouTube players
+  // Embedded players
   document.querySelectorAll("iframe").forEach(e =&gt; {
-    if (e.getAttribute("src").indexOf("youtube.com/embed") === -1) return
+    // YouTube
+    if (e.src?.includes("youtube.com/embed"))
+      return e.click()
 
-    e.contentWindow.postMessage(JSON.stringify({
-      "event": "command",
-      "func": "pauseVideo"
-    }), "*")
+    // Spotify
+    if (e.src?.includes("spotify.com/embed"))
+      return e.contentWindow.postMessage({ "command": "pause" }, "*")
   })
+
+  // Spotify
+  if (window.location.host.endsWith("spotify.com"))
+    document.querySelector("button[aria-label='Pause']").click()
 `
 
 // Set up
@@ -878,6 +883,8 @@ Do not skip active tab</string>
 			<string>pause_others_keyword</string>
 		</dict>
 	</array>
+	<key>variablesdontexport</key>
+	<array/>
 	<key>version</key>
 	<string>25.1</string>
 	<key>webaddress</key>
