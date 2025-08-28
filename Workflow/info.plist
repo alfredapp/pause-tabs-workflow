@@ -886,7 +886,7 @@ Do not skip active tab</string>
 	<key>variablesdontexport</key>
 	<array/>
 	<key>version</key>
-	<string>25.1</string>
+	<string>25.2</string>
 	<key>webaddress</key>
 	<string>https://github.com/alfredapp/pause-tabs-workflow/</string>
 </dict>
